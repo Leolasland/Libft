@@ -1,7 +1,3 @@
-//
-// Created by Herbie Danyel on 11/4/20.
-//
-
 int	ft_strncmp (char *s1, char *s2, unsigned int n)
 {
 	while (n--)

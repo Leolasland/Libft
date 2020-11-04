@@ -1,7 +1,3 @@
-//
-// Created by Herbie Danyel on 11/4/20.
-//
-
 int	ft_atoi(char *str)
 {
 	int n;
