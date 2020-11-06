@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hdanyel <hdanyel@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/06 15:54:55 by hdanyel           #+#    #+#             */
+/*   Updated: 2020/11/06 15:54:55 by hdanyel          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
 #include <unistd.h>
 
-int	ft_atoi(char *str);
+int	ft_atoi(const char *str);
 void ft_bzero(void * s ,size_t  n);
 void *ft_calloc(size_t num, size_t size);
 int ft_isalpha(int ch);
