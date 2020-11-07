@@ -6,11 +6,11 @@
 /*   By: hdanyel <hdanyel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 12:56:16 by hdanyel           #+#    #+#             */
-/*   Updated: 2020/11/07 12:56:16 by hdanyel          ###   ########.fr       */
+/*   Updated: 2020/11/07 12:59:05 by hdanyel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 char *ft_strjoin(char const *s1, char const *s2)
 {
