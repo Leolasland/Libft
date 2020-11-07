@@ -6,7 +6,7 @@
 /*   By: hdanyel <hdanyel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 15:16:25 by hdanyel           #+#    #+#             */
-/*   Updated: 2020/11/07 12:59:05 by hdanyel          ###   ########.fr       */
+/*   Updated: 2020/11/07 13:09:17 by hdanyel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void ft_bzero(void *s , size_t  n)
 	size_t i;
 
 	if (s == NULL)
-		return (NULL);
+		return;
 	*c = s;
 	i = 0;
 	while(i < n)

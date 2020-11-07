@@ -6,14 +6,14 @@
 /*   By: hdanyel <hdanyel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 15:54:55 by hdanyel           #+#    #+#             */
-/*   Updated: 2020/11/07 12:02:54 by hdanyel          ###   ########.fr       */
+/*   Updated: 2020/11/07 14:18:55 by hdanyel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#include <unistd.h>
+# include <unistd.h>
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
