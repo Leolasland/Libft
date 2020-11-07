@@ -6,7 +6,7 @@
 #    By: hdanyel <hdanyel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/06 15:09:56 by hdanyel           #+#    #+#              #
-#    Updated: 2020/11/07 15:13:09 by hdanyel          ###   ########.fr        #
+#    Updated: 2020/11/07 15:27:39 by hdanyel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,13 +28,12 @@ CFLAGS	= -Wall -Wextra -Werror
 
 RM		= rm -f
 
-%.o:	%.c $(HDRS)
-		$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) -I.
+all:
+		$(NAME)
 
-all:	$(NAME)
-
-$(NAME):
-		ar rc $(NAME) $(OBJS)
+$(NAME): $(OBJS)
+		$(CC) $(CFLAGS) $(OBJS) -I.
+		ar rcs $(NAME) $(OBJS)
 
 clean:
 		$(RM) $(OBJS)

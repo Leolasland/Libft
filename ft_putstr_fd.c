@@ -6,7 +6,7 @@
 /*   By: hdanyel <hdanyel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 12:55:36 by hdanyel           #+#    #+#             */
-/*   Updated: 2020/11/07 12:59:05 by hdanyel          ###   ########.fr       */
+/*   Updated: 2020/11/07 16:33:18 by hdanyel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,13 @@
 
 void ft_putstr_fd(char *s, int fd)
 {
+	int		i;
+	char	c;
 
+	i = 0;
+	while (s[i] != '\0')
+	{
+		c = s[i++];
+		write( fd , &c, 1);
+	}
 }
