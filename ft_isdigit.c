@@ -6,11 +6,16 @@
 /*   By: hdanyel <hdanyel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 15:17:47 by hdanyel           #+#    #+#             */
-/*   Updated: 2020/11/06 15:17:47 by hdanyel          ###   ########.fr       */
+/*   Updated: 2020/11/07 12:08:25 by hdanyel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(int ch)
-{
+#include <libft.h>
 
+int ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+		return (c);
+	else
+		return (0);
 }

@@ -6,7 +6,7 @@
 #    By: hdanyel <hdanyel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/06 15:09:56 by hdanyel           #+#    #+#              #
-#    Updated: 2020/11/06 15:47:11 by hdanyel          ###   ########.fr        #
+#    Updated: 2020/11/07 11:00:27 by hdanyel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,8 @@ all:	$(NAME)
 $(NAME):
 		gcc $(CFLAGS) -c $(SRCS)
 		gcc -o ($NAME) libft.o
+
+.PHONY: clean
 
 clean:
 		rm -f $(OBJS)
