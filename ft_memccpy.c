@@ -14,5 +14,18 @@
 
 void *ft_memccpy(void *dest, const void *source, int ch, size_t count)
 {
+	unsigned char	sym;
+	unsigned char	*d;
+	unsigned char	*s;
 
+	sym = (unsigned char)c;
+	d = (unsigned char *)dst;
+	s = (unsigned char *)src;
+	while (n--)
+	{
+		*d++ = *s++;
+		if (*(d - 1) == sym)
+			return (d);
+	}
+	return (NULL);
 }
