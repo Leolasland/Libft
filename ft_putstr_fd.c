@@ -14,13 +14,6 @@
 
 void ft_putstr_fd(char *s, int fd)
 {
-	int		i;
-	char	c;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		c = s[i++];
-		write( fd , &c, 1);
-	}
+	if (s)
+		write(fd, s, ft_strlen(s));
 }
