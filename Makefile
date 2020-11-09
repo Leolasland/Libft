@@ -6,7 +6,7 @@
 #    By: hdanyel <hdanyel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/06 15:09:56 by hdanyel           #+#    #+#              #
-#    Updated: 2020/11/07 15:27:39 by hdanyel          ###   ########.fr        #
+#    Updated: 2020/11/09 17:33:49 by hdanyel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,16 +24,16 @@ OBJS	= $(SRCS:.c=.o)
 
 CC		= gcc
 
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -O3 -c
 
 RM		= rm -f
 
-all:
-		$(NAME)
+all:	$(NAME)
 
-$(NAME): $(OBJS)
-		$(CC) $(CFLAGS) $(OBJS) -I.
-		ar rcs $(NAME) $(OBJS)
+$(NAME):
+		$(CC) $(CFLAGS) $(HDRS) -I $(OBJS) -o
+		ar rc $(NAME) $(OBJS)
+		ranlib $(NAME)
 
 clean:
 		$(RM) $(OBJS)
