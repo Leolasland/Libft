@@ -14,12 +14,8 @@
 
 int	ft_strncmp (char *s1, char *s2, unsigned int n)
 {
-	while (n--)
-	{
-		if (*s2 == '\0' && n)
-			return (0);
-		s1++;
-		s2++;
-	}
-	return (*s1 - *s2);
+	size_t len;
+
+	len = ft_strlen(s1);
+	return (ft_memcmp(s1, s2, n < len ? n : len + 1));
 }
