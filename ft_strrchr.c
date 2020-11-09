@@ -14,5 +14,11 @@
 
 char *ft_strrchr(const char *str, int ch)
 {
+  size_t i;
 
+	i = ft_strlen(s) + 1;
+	while (s[--i] != (char)c)
+		if (i == 0)
+			return (NULL);
+	return ((char*)s + i);
 }
