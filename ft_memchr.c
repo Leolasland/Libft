@@ -6,7 +6,7 @@
 /*   By: hdanyel <hdanyel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 12:54:28 by hdanyel           #+#    #+#             */
-/*   Updated: 2020/11/07 14:53:25 by hdanyel          ###   ########.fr       */
+/*   Updated: 2020/11/10 08:47:00 by hdanyel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,14 @@
 
 void *ft_memchr(const void *buffer, int ch, size_t count)
 {
-	unsigned char *ptr;
-	unsigned char sym;
+	int i;
 
-	ptr = (unsigned char *)s;
-	sym = (unsigned char)c;
-	while (n--)
+ 	i = 0;
+	while (count != 0)
 	{
-		if (*ptr == sym)
-			return (ptr);
-		ptr++;
+		if (ch == &buffer[i])
+			return (&buffer[i]);
+		i++;
+		count--;
 	}
-	return (NULL);
 }

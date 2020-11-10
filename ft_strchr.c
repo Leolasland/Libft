@@ -6,7 +6,7 @@
 /*   By: hdanyel <hdanyel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 12:55:49 by hdanyel           #+#    #+#             */
-/*   Updated: 2020/11/07 12:59:05 by hdanyel          ###   ########.fr       */
+/*   Updated: 2020/11/10 08:47:00 by hdanyel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,5 @@
 
 char *ft_strchr(const char *str, int ch)
 {
-  char	*ptr;
-	char	sym;
 
-	ptr = (char *)s;
-	sym = (char)c;
-	while (*ptr && !(*ptr == sym))
-		ptr++;
-	return ((*ptr == sym) ? ptr : NULL);
 }

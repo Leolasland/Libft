@@ -6,17 +6,22 @@
 /*   By: hdanyel <hdanyel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 15:16:25 by hdanyel           #+#    #+#             */
-/*   Updated: 2020/11/07 16:23:30 by hdanyel          ###   ########.fr       */
+/*   Updated: 2020/11/10 12:09:31 by hdanyel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_bzero(void *s , size_t  n)
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *ptr;
+	unsigned char	*c;
+	size_t			i;
 
-	ptr = (unsigned char *)s;
-	while (n--)
-		*ptr++ = '\0';
+	c = (unsigned char *)s;
+	i = 0;
+	while (i < n)
+	{
+		c[i] = '\0';
+		i++;
+	}
 }
