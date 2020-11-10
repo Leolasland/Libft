@@ -6,13 +6,16 @@
 /*   By: hdanyel <hdanyel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 12:54:00 by hdanyel           #+#    #+#             */
-/*   Updated: 2020/11/10 08:47:00 by hdanyel          ###   ########.fr       */
+/*   Updated: 2020/11/10 12:50:46 by hdanyel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isprint(int ch)
+int	ft_isprint(int c)
 {
-
+	if (c >= 32 && c <= 126)
+		return (c);
+	else
+		return (0);
 }

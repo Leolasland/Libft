@@ -6,13 +6,13 @@
 /*   By: hdanyel <hdanyel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 12:56:09 by hdanyel           #+#    #+#             */
-/*   Updated: 2020/11/07 12:59:05 by hdanyel          ###   ########.fr       */
+/*   Updated: 2020/11/10 14:13:32 by hdanyel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strdup(char *src)
+char	*ft_strdup(char *src)
 {
 	char	*dest;
 	int		i;
@@ -21,9 +21,7 @@ char *ft_strdup(char *src)
 	i = 0;
 	j = 0;
 	while (src[i])
-	{
 		i++;
-	}
 	dest = malloc(i + 1);
 	if (dest == NULL)
 		return (NULL);

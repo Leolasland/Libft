@@ -6,22 +6,24 @@
 /*   By: hdanyel <hdanyel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 12:54:28 by hdanyel           #+#    #+#             */
-/*   Updated: 2020/11/10 08:47:00 by hdanyel          ###   ########.fr       */
+/*   Updated: 2020/11/10 14:04:42 by hdanyel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memchr(const void *buffer, int ch, size_t count)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int i;
+	unsigned char *ptr;
+	unsigned char sym;
 
- 	i = 0;
-	while (count != 0)
+	ptr = (unsigned char *)s;
+	sym = (unsigned char)c;
+	while (n--)
 	{
-		if (ch == &buffer[i])
-			return (&buffer[i]);
-		i++;
-		count--;
+		if (*ptr == sym)
+			return (ptr);
+		ptr++;
 	}
+	return (NULL);
 }

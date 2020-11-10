@@ -6,18 +6,19 @@
 /*   By: hdanyel <hdanyel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 15:16:37 by hdanyel           #+#    #+#             */
-/*   Updated: 2020/11/10 08:47:00 by hdanyel          ###   ########.fr       */
+/*   Updated: 2020/11/10 12:25:21 by hdanyel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_calloc(size_t num, size_t size)
+void	*ft_calloc(size_t num, size_t size)
 {
-  void	*mem;
+	void	*mem;
 
-	if ((mem = malloc(count * size)) == NULL)
+	mem = malloc(num * size);
+	if (mem == NULL)
 		return (NULL);
-	ft_bzero(mem, count * size);
+	ft_bzero(mem, num * size);
 	return (mem);
 }

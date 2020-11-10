@@ -6,13 +6,13 @@
 /*   By: hdanyel <hdanyel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 12:55:36 by hdanyel           #+#    #+#             */
-/*   Updated: 2020/11/10 08:47:00 by hdanyel          ###   ########.fr       */
+/*   Updated: 2020/11/10 14:56:57 by hdanyel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	int		i;
 	char	c;
@@ -21,6 +21,6 @@ void ft_putstr_fd(char *s, int fd)
 	while (s[i] != '\0')
 	{
 		c = s[i++];
-		write( fd , &c, 1);
+		write(fd, &c, 1);
 	}
 }
