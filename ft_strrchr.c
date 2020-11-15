@@ -14,5 +14,16 @@
 
 char *ft_strrchr(const char *str, int ch)
 {
+  char	*ptr;
+	char	sym;
 
+	ptr = (char *)str + ft_strlen(str);
+	sym = (char)ch;
+	while (ptr >= str)
+	{
+		if (*ptr == sym)
+			return (ptr);
+		ptr--;
+	}
+	return (NULL);
 }
