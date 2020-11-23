@@ -14,14 +14,14 @@
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	size_t	len;
-	size_t	i;
-
-	len = ft_strlen(s1);
-	i = ft_memcmp(s1, s2, n);
-	if( i < len)
-		return (n);
+	while (n > 0 && *s1 && *s2 && *s1 == *s2)
+	{
+		n--;
+		s1++;
+		s2++;
+	}
+	if (n == 0)
+		return (0);
 	else
-		return (len + 1);
-
+		return (*(unsigned char*)s1 - *(unsigned char*)s2);
 }
