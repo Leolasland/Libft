@@ -12,36 +12,37 @@
 
 #include "libft.h"
 
-static int		ft_numlen(int n, int minus)
+ void reverse(char *str, int len)
+ {
+	 int i;
+	char c;
+ 
+	i = 0;
+     while (len > i) 
+     {
+         c = str[i];
+         str[i] = str[len - 1];
+         str[len - 1] = c;
+	 i++;
+	     len--;
+     }
+	 
+	 
+char	*ft_itoa(int value)
 {
-	int numlen;
+     int i; 
+	int sign;
+	char str;
 
-	numlen = 1;
-	while ((n /= 10))
-		numlen++;
-	return (numlen + minus);
-}
-
-char			*ft_itoa(int n)
-{
-	char	*str;
-	int		numlen;
-	int		minus;
-	int		digit;
-
-	minus = (n < 0) ? 1 : 0;
-	numlen = ft_numlen(n, minus);
-	if ((str = ft_strnew(numlen)))
-	{
-		str[numlen--] = '\0';
-		while (numlen >= minus)
-		{
-			digit = n % 10;
-			str[numlen--] = FT_ABS(digit) + '0';
-			n /= 10;
-		}
-		if (minus)
-			str[0] = '-';
-	}
-	return (str);
-}
+	sign = value;
+     if (value < 0)  
+         value = -value;         
+     i = 0;
+     while ((value /= 10) > 0)
+		str[i++] = value % 10 + '0';
+     if (sign < 0)
+         s[i++] = '-';
+     s[i] = '\0';
+     
+     return(reverse(str, strlen(str));
+ }
