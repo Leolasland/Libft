@@ -12,31 +12,17 @@
 
 #include "libft.h"
 
-char	*ft_strsjoin(char **strs, char *delim)
+char			*ft_strjoin(char const *s1, char const *s2)
 {
-	int		i;
-	size_t	join_len;
-	size_t	delim_len;
-	char	*join;
+	char	*dst;
+	size_t	len;
 
-	delim_len = ft_strlen(delim);
-	join_len = 0;
-	i = -1;
-	while (strs[++i] != NULL)
-	{
-		join_len += ft_strlen(strs[i]);
-		if (strs[i + 1] != NULL)
-			join_len += delim_len;
-	}
-	if ((join = (char*)malloc(sizeof(char) * (join_len + 1))) == NULL)
+	if (s1 == NULL && s2 == NULL)
 		return (NULL);
-	join[0] = '\0';
-	i = -1;
-	while (strs[++i] != NULL)
-	{
-		ft_strcat(join, strs[i]);
-		if (*strs[i] != '\0' && strs[i + 1] != NULL)
-			ft_strcat(join, delim);
-	}
-	return (join);
+	len = ft_strlen(s1) + ft_strlen(s2);
+	if (!(dst = malloc(len + 1)))
+		return (NULL);
+	ft_strcpy(dst, s1);
+	ft_strcat(dst, s2);
+	return (dst);
 }
