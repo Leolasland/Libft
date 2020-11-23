@@ -14,14 +14,13 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char *ptr;
-	char sym;
+	unsigned char *ptr;
 
-	ptr = (char *)s;
-	sym = (char)c;
-	while (*ptr && !(*ptr == sym))
+	ptr = (unsigned char *)s;
+	c = (unsigned char)c;
+	while (*ptr && !(*ptr == c))
 		ptr++;
-	if (*ptr == sym)
+	if (*ptr == c)
 		return (ptr);
 	else
 		return (NULL);
