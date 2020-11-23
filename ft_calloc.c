@@ -16,6 +16,8 @@ void	*ft_calloc(size_t num, size_t size)
 {
 	void	*mem;
 
+	if (num == NULL || size == NULL)
+		return (NULL);
 	mem = malloc(num * size);
 	if (mem == NULL)
 		return (NULL);
