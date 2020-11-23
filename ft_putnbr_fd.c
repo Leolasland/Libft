@@ -14,16 +14,16 @@
 
 void ft_putnbr_fd(int n, int fd)
 {
-  unsigned num;
-
 	if (n < 0)
-		ft_putchar_fd('-', fd);
-	num = (unsigned)FT_ABS(n);
-	if (num >= 10)
 	{
-		ft_putnbr_fd(num / 10, fd);
-		ft_putnbr_fd(num % 10, fd);
+		ft_putchar_fd('-', fd);
+		n = -n;
+	}
+	if (n >= 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd((n % 10 + '0'), fd);
 	}
 	else
-		ft_putchar_fd(num + '0', fd);
+		ft_putchar_fd(n + '0', fd);
 }
