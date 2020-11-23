@@ -12,52 +12,78 @@
 
 #include "libft.h"
 
-static size_t	count_segment(char const *s, char c)
+static	int	 ft_sum(const char *str, char c)
 {
-	size_t	counter;
-	int		i;
-
-	counter = 0;
-	i = 0;
-	while (s[i])
+	int	q;
+​
+	q = 0;
+ 	while (*str != '\0')
 	{
-		if (s[i] == c)
+		while (*str == c)
 		{
-			i++;
-			continue ;
+			str++;
+			if (*str == '\0')
+				return(q);
 		}
-		counter++;
-		while (s[i] && s[i] != c)
-			i++;
+		if (*str != c)
+			q++;
+ 		while (*str != c)
+		{
+			str++;
+			if (*str == '\0')
+				return (q);
+		}
 	}
-	return (counter);
+	return (q);
 }
-
-char			**ft_split(char const *s, char c)
+​
+static	int	ft_separation (const char *s, char c)
 {
-	char	**strs;
-	size_t	tab_counter;
-	size_t	i;
-	size_t	j;
-
-	if (s == NULL)
-		return (NULL);
-	tab_counter = count_segment(s, c);
-	if ((strs = (char**)malloc(sizeof(char*) * (tab_counter + 1))) == NULL)
-		return (NULL);
-	tab_counter = 0;
-	j = -1;
-	while (s[++j])
+	int	len;
+​
+	len = 0;
+	while (*s != c && *s != '\0')
 	{
-		if (s[j] == c)
-			continue ;
-		i = 0;
-		while (s[j + i] && s[j + i] != c)
-			i++;
-		if ((strs[tab_counter++] = ft_strndup(&s[j], i)) == NULL)
-			return (ft_strsdestroy(strs));
-		j += i - 1;
+		s++;
+		len++;
 	}
-	strs[tab_counter] = NULL;
-	return (strs);
+	return (len);
+}
+​
+static	void	ft_free(char **arr, int k)
+{
+	while (k--)
+		free(arr[k]);
+	free(arr);
+}
+​
+char		**ft_split(char const *s, char c)
+{
+	char	**arr;
+	int	j;
+	int	k;
+	int	i;
+	int	sum;
+​
+	i = 0;
+	sum = ft_sum(s, c);
+	if (!s || !((arr = (char **)malloc((sum + 1) * sizeof(char *)))))
+		return (NULL);
+	k = -1;
+	while (k++ != sum)
+	{
+		while (s[i] == c && s[i] != '\0')
+			i++;
+		if (!(arr[k] = (char*)malloc(sizeof(char) * (ft_separation(&s[i], c) + 1))))
+		{
+			ft_free(arr, k);
+			return (NULL);
+		}
+		arr[k][ft_separation(&s[i], c)] = '\0';
+		j = 0;
+		while (s[i] != c && s[i] != '\0')
+			arr[k][j++] = s[i++];
+	}
+	arr[k+1] = NULL;
+	return (arr);
 }
