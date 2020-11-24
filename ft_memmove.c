@@ -6,7 +6,7 @@
 /*   By: hdanyel <hdanyel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 12:55:01 by hdanyel           #+#    #+#             */
-/*   Updated: 2020/11/10 14:04:19 by hdanyel          ###   ########.fr       */
+/*   Updated: 2020/11/24 15:45:55 by hdanyel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char *d;
-	const unsigned char *s;
-	size_t		i;
+	unsigned char		*d;
+	const unsigned char	*s;
+	size_t				i;
 
 	d = (unsigned char *)dst;
 	s = (const unsigned char *)src;
@@ -31,7 +31,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		i = 0;
 		while (i < len)
 		{
-			s[i] = s[i];
+			d[i] = s[i];
 			i++;
 		}
 	}

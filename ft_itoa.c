@@ -6,43 +6,59 @@
 /*   By: hdanyel <hdanyel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 12:54:11 by hdanyel           #+#    #+#             */
-/*   Updated: 2020/11/10 08:47:00 by hdanyel          ###   ########.fr       */
+/*   Updated: 2020/11/24 15:18:04 by hdanyel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
- void reverse(char *str, int len)
- {
-	 int i;
-	char c;
- 
-	i = 0;
-     while (len > i) 
-     {
-         c = str[i];
-         str[i] = str[len - 1];
-         str[len - 1] = c;
-	 i++;
-	     len--;
-     }
-	 
-	 
-char	*ft_itoa(int value)
+static int		ft_abs(int n)
 {
-     int i; 
-	int sign;
-	char str;
+	if (n < 0)
+		return (-n);
+	else
+		return (n);
+}
 
-	sign = value;
-     if (value < 0)  
-         value = -value;         
-     i = 0;
-     while ((value /= 10) > 0)
-		str[i++] = value % 10 + '0';
-     if (sign < 0)
-         s[i++] = '-';
-     s[i] = '\0';
-     
-     return(reverse(str, strlen(str));
- }
+static void		ft_reverse(char *str, int len)
+{
+	int		i;
+	char	c;
+
+	i = 0;
+	while ((len / 2) > i)
+	{
+		c = str[i];
+		str[i] = str[len - i - 1];
+		str[len - i - 1] = c;
+		i++;
+	}
+}
+
+char			*ft_itoa(int n)
+{
+	int		i;
+	int		sign;
+	char	*str;
+
+	sign = 1;
+	i = 0;
+	if (n < 0)
+	{
+		sign = -sign;
+		n = -n;
+	}
+	if (!(str = ft_calloc(11 + sign, sizeof(*str))))
+		return (NULL);
+	if (n == 0)
+		str[i] = '0';
+	while (n != 0)
+	{
+		str[i++] = ft_abs(n % 10) + '0';
+		n = (n / 10);
+	}
+	if (sign < 0)
+		str[i++] = '-';
+	ft_reverse(str, ft_strlen(str));
+	return (str);
+}

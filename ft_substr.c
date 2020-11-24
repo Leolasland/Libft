@@ -6,13 +6,13 @@
 /*   By: hdanyel <hdanyel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 12:58:08 by hdanyel           #+#    #+#             */
-/*   Updated: 2020/11/10 08:47:00 by hdanyel          ###   ########.fr       */
+/*   Updated: 2020/11/24 18:06:24 by hdanyel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_strndup(const char *s1, size_t size)
+static char		*ft_strndup(const char *s1, size_t size)
 {
 	char	*new_str;
 	char	*new_cpy;
@@ -29,11 +29,11 @@ static char	*ft_strndup(const char *s1, size_t size)
 	return (new_str);
 }
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char			*ft_substr(char const *s, unsigned int start, size_t len)
 {
-  char	*scpy;
+	char	*scpy;
 
-	if (ft_strlen(s) < start)
+	if (ft_strlen((char *)s) < (int)start)
 	{
 		if (!(scpy = malloc(sizeof(char))))
 			return (NULL);

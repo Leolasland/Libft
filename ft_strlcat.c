@@ -6,35 +6,34 @@
 /*   By: hdanyel <hdanyel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 12:56:23 by hdanyel           #+#    #+#             */
-/*   Updated: 2020/11/10 08:47:00 by hdanyel          ###   ########.fr       */
+/*   Updated: 2020/11/24 17:25:10 by hdanyel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	const char *odst;
-	const char *osrc;
-	size_t n;
-	
-	*odst = dst;
-	*osrc = src;
-	n = size;
-	while (n-- != 0 && *dst != '\0')
-		dst++;
-	n = dsize - dst - odst;
-	if (n-- == 0)
-		return(dst - odst + strlen(src));
-	while (*src != '\0') 
+	size_t d_len;
+	size_t s_len;
+	size_t j;
+	size_t i;
+
+	d_len = ft_strlen(dst);
+	s_len = ft_strlen((char*)src);
+	j = d_len;
+	i = 0;
+	if (d_len < dstsize - 1 && dstsize > 0)
 	{
-		if (n != 0) 
+		while (src[i] && d_len + i < dstsize - 1)
 		{
-			*dst++ = *src;
-			n--;
+			dst[j] = src[i];
+			j++;
+			i++;
 		}
-		src++;
+		dst[j] = 0;
 	}
-	*dst = '\0';
-	return(dst - odst + (src - osrc));
+	if (d_len >= dstsize)
+		d_len = dstsize;
+	return (d_len + s_len);
 }
