@@ -6,7 +6,7 @@
 /*   By: hdanyel <hdanyel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 12:58:08 by hdanyel           #+#    #+#             */
-/*   Updated: 2020/11/24 18:06:24 by hdanyel          ###   ########.fr       */
+/*   Updated: 2020/11/25 11:09:31 by hdanyel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ char			*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*scpy;
 
+	if (!s)
+		return (NULL);
 	if (ft_strlen((char *)s) < (int)start)
 	{
 		if (!(scpy = malloc(sizeof(char))))

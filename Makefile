@@ -6,7 +6,7 @@
 #    By: hdanyel <hdanyel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/06 15:09:56 by hdanyel           #+#    #+#              #
-#    Updated: 2020/11/24 17:26:16 by hdanyel          ###   ########.fr        #
+#    Updated: 2020/11/25 13:28:24 by hdanyel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,20 +24,22 @@ OBJS	= $(SRCS:.c=.o)
 
 CC		= gcc
 
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -c
 
-RM		= rm -f
+RM		= rm -rf
 
 .PHONY:	all clean fclean re
 
 all:	$(NAME)
 
-$(NAME):
-		$(CC) $(CFLAGS) -I. $(HDRS) -c $(SRCS)
+$(NAME): $(OBJS)
 		ar rcs $(NAME) $(OBJS)
 
+%.o:	%.c $(HDRS)
+		$(CC) $(CFLAGS) -I$(HDRS) $< -o $@
+
 clean:
-		$(RM) $(OBJS)
+		$(RM) $(OBJS) *.gch
 
 fclean:	clean
 		$(RM) $(NAME)

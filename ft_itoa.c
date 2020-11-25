@@ -6,11 +6,21 @@
 /*   By: hdanyel <hdanyel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 12:54:11 by hdanyel           #+#    #+#             */
-/*   Updated: 2020/11/24 15:18:04 by hdanyel          ###   ########.fr       */
+/*   Updated: 2020/11/25 11:44:08 by hdanyel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static int		ft_numlen(int n, int sign)
+{
+	int numlen;
+
+	numlen = 1;
+	while (n /= 10)
+		numlen++;
+	return (numlen + sign);
+}
 
 static int		ft_abs(int n)
 {
@@ -41,23 +51,20 @@ char			*ft_itoa(int n)
 	int		sign;
 	char	*str;
 
-	sign = 1;
+	sign = 0;
 	i = 0;
 	if (n < 0)
-	{
-		sign = -sign;
-		n = -n;
-	}
-	if (!(str = ft_calloc(11 + sign, sizeof(*str))))
+		sign = 1;
+	if (!(str = ft_calloc(ft_numlen(n, sign) + 1, sizeof(*str))))
 		return (NULL);
 	if (n == 0)
 		str[i] = '0';
 	while (n != 0)
 	{
 		str[i++] = ft_abs(n % 10) + '0';
-		n = (n / 10);
+		n /= 10;
 	}
-	if (sign < 0)
+	if (sign == 1)
 		str[i++] = '-';
 	ft_reverse(str, ft_strlen(str));
 	return (str);

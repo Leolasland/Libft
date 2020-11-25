@@ -18,6 +18,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	const unsigned char	*s;
 	size_t				i;
 
+	if (!dst && !src)
+		return (NULL);
 	d = (unsigned char *)dst;
 	s = (const unsigned char *)src;
 	if (s < d)

@@ -6,7 +6,7 @@
 /*   By: hdanyel <hdanyel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 12:56:16 by hdanyel           #+#    #+#             */
-/*   Updated: 2020/11/10 08:47:00 by hdanyel          ###   ########.fr       */
+/*   Updated: 2020/11/25 11:10:21 by hdanyel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	i;
 	size_t	j;
 
-	if (s1 == NULL && s2 == NULL)
+	if (!s1 || !s2)
 		return (NULL);
 	if (!(dst = malloc(ft_strlen((char*)s1) + ft_strlen((char*)s2) + 1)))
 		return (NULL);
