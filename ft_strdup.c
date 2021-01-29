@@ -28,5 +28,6 @@ char	*ft_strdup(char *s1)
 		dst[j] = s1[j];
 		j++;
 	}
+	dst[j] = '\0';
 	return (dst);
 }
